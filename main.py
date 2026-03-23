@@ -6,7 +6,23 @@ from database import SessionLocal, engine
 # Crée les tables dans le fichier blog.db s'il n'existe pas
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Mon API blog Avec SQLite")
+app = FastAPI(title=title="Blog API Professionnelle - INF222",
+    description="""
+    Bienvenue sur l'API de Gestion de Blog
+    ## Système CRUD Complet
+    Cette API permet la gestion totale du cycle de vie des articles
+     **Fonctionnalités incluses :**
+    * 📝 **Création** d'articles
+    * **Modification**
+    * **Suppression**
+    * 📖 **Lecture** de la liste complète 
+    * 🔍 **Recherche** par mots-clés
+    * 🚀 **Redirection automatique** 
+    """,
+    version="1.1.0",
+     contact={
+        "name": "Laure Manku",
+        "email": "laure.manku@exemple.com",})
 
 # Fonction pour obtenir l'accès à la base de données
 def get_db():
